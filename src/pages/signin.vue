@@ -1,13 +1,15 @@
 <template>
-  <div class="p-4 border-gray-800 rounded-3xl drop-shadow-2xl">
+  <div class="p-4 border-blue-800 rounded-3xl drop-shadow-2xl border-2">
     <form>
-      <div class="p-2 text-2xl">Sign-In {{ username }}</div>
+      <div class="p-2 text-2xl">Sign-In</div>
       <div>
-        <label for="username" class="text-blue-800 px-1 text-lg">Username</label>
+        <label for="username" class="text-blue-800 px-1 text-lg"
+          >Username {{ username }}</label
+        >
         <input
           type="text"
           id="username"
-          v-model="username"
+          v-model.trim.lazy="username"
           placeholder="Username"
           :disabled="busySignIn"
           class="px-2 py-1 border-2 border-gray-400 rounded-lg outline-black"
